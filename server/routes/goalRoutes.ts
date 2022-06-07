@@ -1,9 +1,19 @@
-import express, { Request, Response } from "express";
+import express from "express";
 
 const router = express.Router();
+const {
+  getGoals,
+  setGoals,
+  updateGoals,
+  deleteGoals,
+} = require("../controllers/goalController");
 
-router.get("/", (req: Request, res: Response) => {
-  res.send("Hello World");
-});
+router.get("/", getGoals);
+
+router.post("/", setGoals);
+
+router.put("/:id", updateGoals);
+
+router.delete("/:id", deleteGoals);
 
 module.exports = router;

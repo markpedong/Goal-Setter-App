@@ -1,5 +1,6 @@
-import express, { Express } from "express";
+import { Express } from "express";
 
+const express = require("express");
 const dotenv = require("dotenv").config();
 const app: Express = express();
 const PORT = process.env.PORT || 5000;
