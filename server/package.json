@@ -3,7 +3,6 @@
   "author": "Mark",
   "version": "1.0.0",
   "description": "Goalsetter app",
-  "type": "module",
   "main": "server.ts",
   "license": "MIT",
   "scripts": {
