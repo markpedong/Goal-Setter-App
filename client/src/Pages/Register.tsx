@@ -1,5 +1,12 @@
-import React, { useState, useEffect, FormEventHandler } from "react";
+import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
+
+type TFormData = {
+  name: string;
+  email: string;
+  password: string;
+  password2: string;
+};
 
 const Register = () => {
   //create a formData state
@@ -12,7 +19,24 @@ const Register = () => {
 
   const { name, email, password, password2 } = formData;
 
-  const onChange = (e: React.ChangeEvent) => {};
+  //handle changes in FormData
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    // setFormData({
+    //   ...formData,
+    //   [e.target.name]: value,
+    // });
+
+    setFormData({
+      ...formData,
+    });
+
+    console.log(value, formData);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
 
   return (
     <>
@@ -24,7 +48,7 @@ const Register = () => {
       </section>
 
       <section className="form">
-        <form>
+        <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -58,12 +82,15 @@ const Register = () => {
           <div className="form-group">
             <input
               type="password"
-              id="password"
+              id="password2"
               value={password2}
               placeholder="Enter your password again"
               className="form-control"
               onChange={onChange}
             />
+          </div>
+          <div className="form-group">
+            <button className="btn btn-block">Submit</button>
           </div>
         </form>
       </section>
