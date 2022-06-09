@@ -59,7 +59,7 @@ const Register = () => {
             <input
               type="password"
               id="password"
-              value={password}
+              value={password2}
               placeholder="Enter your password again"
               className="form-control"
               onChange={onChange}
